@@ -1,12 +1,5 @@
-const mysql = require('mysql');
 const ExpressLoader = require('./loaders/Express');
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'theforceapi'
-});
+const connection = require('./config/database');
 
 connection.connect((err) => {
   if (err) {
