@@ -1,8 +1,8 @@
 const route = require('express').Router();
 const characterController = require('../controllers/characterController');
 
-route.get('/', (req, res) => {
-  res.send('you have hit the characters route');
+route.get('/test', (req, res) => {
+  res.send('character here');
 })
 
 route.get('/', characterController.getCharacters)

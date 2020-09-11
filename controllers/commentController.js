@@ -1,30 +1,27 @@
 const response = require('../middlewares/response');
 const connection = require('../config/database');
+// const commentService = require('../services/Comments');
 
 class CommentController {
   addComment (req, res) {
 
     const { movieId, comment } = req.body;
 
-    if (movieId == undefined) res.status(404).send(response.successResponse(404, 'Please insert movie id in body'));
-    if (comment == undefined) res.status(404).send(response.successResponse(404, 'Please insert comment in body'));
-
-    console.log(movieId);
-    console.log(comment);
+    if (movieId == undefined) res.status(400).send(response.errorResponse(400, 'Please insert movie id in body'));
+    if (comment == undefined) res.status(400).send(response.errorResponse(400, 'Please insert comment in body'));
 
     connection.query("INSERT INTO `comments` (`movie`, `comment`, \
       `public_IP`) VALUES ('" + movieId + "', '" + comment + "', '" + req.ip + "')", 
          (error, results, fields) => {
             if (error) {
                 console.log(error.message);
-                res.status(404).send(response.errorResponse(404, error.message));
+                res.status(400).send(response.errorResponse(400, error.message));
             } 
 
             if (results) {
                 res.status(201).send(response.successResponse(201, 'Comment inserted'));
             }
         });
-        res.status(201).send(response.successResponse(201, 'Comment inserted'));
   }
 
   getComment (req, res) {
@@ -34,7 +31,7 @@ class CommentController {
       (error, results, fields) => {
         if (error) {
           console.log(error.message);
-          res.status(404).send(response.errorResponse(404, error.message));
+          res.status(400).send(response.errorResponse(400, error.message));
         } 
 
         if (results) {
