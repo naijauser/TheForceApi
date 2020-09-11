@@ -24,7 +24,7 @@ class ExpressLoader {
   }
 
   static invalidRoute (req, res) {
-    res.status(404).send(response.errorResponse(400, 'Oops! This route does not exist'));
+    res.status(404).send(response.errorResponse(404, 'Oops! This route does not exist'));
   }
 }
 
