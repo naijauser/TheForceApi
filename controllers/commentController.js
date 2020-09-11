@@ -1,6 +1,12 @@
-
+co
 
 class CommentController {
+  addComment (req, res) {
+    const { movieId } = req.body;
+
+
+
+  }
 
 }
 

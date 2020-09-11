@@ -4,8 +4,8 @@ const characterRoute = require('./characters');
 const commentRoute = require('./comments');
 const movieRoute = require('./movies');
 
-router.use('/character', characterRoute);
-router.use('/comment', commentRoute);
-router.use('/movie', movieRoute);
+router.use('/characters', characterRoute);
+router.use('/comments', commentRoute);
+router.use('/movies', movieRoute);
 
 module.exports = router;
