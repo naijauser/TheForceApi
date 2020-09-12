@@ -1,4 +1,3 @@
-const ExpressLoader = require('./loaders/Express');
 const connection = require('./config/database');
 
 // connection.connect((err) => {
