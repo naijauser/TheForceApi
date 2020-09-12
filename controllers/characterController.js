@@ -1,8 +1,8 @@
 const response = require('../middlewares/response');
 const connection = require('../config/database');
 const axios = require('axios');
-const config = require('../config/index')
-const utils = require('../utils')
+const config = require('../config/index');
+const utils = require('../utils');
 
 class CharacterController {
   getCharacters (req, res) {

@@ -2,6 +2,8 @@ const axios = require('axios');
 const response = require('../middlewares/response');
 const config = require('../config/index');
 const connection = require('../config/database');
+const movieArray = require('../utils/movieCommentCountArray');
+const utils = require('../utils');
 
 class MovieController {
   getMovie (req, res) {
@@ -40,12 +42,20 @@ class MovieController {
           return Date.parse(a.release_date) - Date.parse(b.release_date)
         });
 
+        sortedData.forEach(element => {
+          element.comment_count = utils.matchFilmIdToEpisodeId(element.episode_id);
+        });
+
         res.status(200).send(response.successResponse(200, 'Films returned', sortedData));
       })
       .catch((error) => {
         console.log(error.message);
         res.status(400).send(response.errorResponse(400, error.message));
       });
+  }
+
+  getArray (req, res) {
+    res.send(movieArray)
   }
 }
 

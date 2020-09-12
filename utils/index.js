@@ -1,3 +1,5 @@
+const movieArray = require('../utils/movieCommentCountArray');
+
 class Utils {
   sortByName(array, format) {
     if (format == undefined || format == '') return array;
@@ -55,6 +57,26 @@ class Utils {
     const totalHeightft = parseFloat(totalHeightcm * 0.0328084);
 
     return { totalHeightcm, totalHeightft };
+  }
+
+  matchFilmIdToEpisodeId (episodeId) {
+    switch (episodeId) {
+      case 1:
+        return movieArray[3];
+      case 2:
+        return movieArray[4];
+      case 3:
+        return movieArray[5];
+      case 4:
+        return movieArray[0];
+      case 5:
+        return movieArray[1];
+      case 6:
+        return movieArray[2];
+    
+      default:
+        return 0;
+    }
   }
 }
 

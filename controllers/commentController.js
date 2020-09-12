@@ -1,6 +1,6 @@
 const response = require('../middlewares/response');
 const connection = require('../config/database');
-// const commentService = require('../services/Comments');
+const movieArray = require('../utils/movieCommentCountArray');
 
 class CommentController {
   addComment (req, res) {
@@ -19,7 +19,8 @@ class CommentController {
             } 
 
             if (results) {
-                res.status(201).send(response.successResponse(201, 'Comment inserted'));
+              movieArray[movieId - 1] += 1;
+              res.status(201).send(response.successResponse(201, 'Comment inserted'));
             }
         });
   }
