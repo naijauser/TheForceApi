@@ -15,7 +15,7 @@ class MovieController {
         
         const data = { title, opening_crawl, release_date };
 
-        connection.query("SELECT COUNT(`comment`) as comment_count FROM `comments` WHERE `movie` = " + movieId, 
+        connection.query("SELECT COUNT(`comment`) as comment_count FROM `comments` WHERE `movie_id` = " + movieId, 
           (error, results, fields) => {
             if (error) {
                 console.log(error.message);

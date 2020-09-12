@@ -10,8 +10,8 @@ class CommentController {
     if (movieId == undefined) res.status(400).send(response.errorResponse(400, 'Please insert movie id in body'));
     if (comment == undefined) res.status(400).send(response.errorResponse(400, 'Please insert comment in body'));
 
-    connection.query("INSERT INTO `comments` (`movie`, `comment`, \
-      `public_IP`) VALUES ('" + movieId + "', '" + comment + "', '" + req.ip + "')", 
+    connection.query("INSERT INTO `comments` (`movie_id`, `comment`, \
+      `public_ip`) VALUES ('" + movieId + "', '" + comment + "', '" + req.ip + "')", 
          (error, results, fields) => {
             if (error) {
                 console.log(error.message);
@@ -27,7 +27,7 @@ class CommentController {
   getComment (req, res) {
     const { movieId } = req.params;
 
-    connection.query("SELECT SUBSTRING(`comment`, 1, 500) as comment, `public_IP`, `created_at` FROM `comments`  WHERE `movie` = " + movieId + " ORDER BY  `created_at` DESC", 
+    connection.query("SELECT SUBSTRING(`comment`, 1, 500) as comment, `public_ip`, `created_at` FROM `comments`  WHERE `movie_id` = " + movieId + " ORDER BY  `created_at` DESC", 
       (error, results, fields) => {
         if (error) {
           console.log(error.message);
