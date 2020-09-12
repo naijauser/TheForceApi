@@ -124,12 +124,12 @@ NOTE: movieId parameter specified here is not the same as episode_id returned wi
   "data": [
     {
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu pretium est. Ut congue arcu est, non vehicula arcu consectetur a. Nulla gravida, tellus eu tincidunt dapibus, odio ante pulvinar tellus, in tempus erat leo pharetra tortor. Donec tristique pulvinar dui, eget pretium magna finibus vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed condimentum risus, sed scelerisque nunc. Nulla ultrices est at venenatis feugiat. Quisque vel metus dignissim, lacinia lorem al",
-      "public_ip": "::1",
+      "public_ip": "::ffff:192.0.2.47 fc00::/7",
       "created_at": "2020-09-12T13:55:51.000Z"
     },
     {
       "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu pretium est. Ut congue arcu est, non vehicula arcu consectetur a. Nulla gravida, tellus eu tincidunt dapibus, odio ante pulvinar tellus, in tempus erat leo pharetra tortor. Donec tristique pulvinar dui, eget pretium magna finibus vel. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed condimentum risus, sed scelerisque nunc. Nulla ultrices est at venenatis feugiat. Quisque vel metus dignissim, lacinia lorem al",
-      "public_ip": "::1",
+      "public_ip": "::ffff:192.0.2.47 fc00::/7",
       "created_at": "2020-09-12T13:33:13.000Z"
     }
   ]
