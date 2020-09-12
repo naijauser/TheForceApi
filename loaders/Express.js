@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('../routes/index');
 const response = require('../middlewares/response');
+const PORT = process.env.PORT || 3000;
 
 class ExpressLoader {
   constructor () {
@@ -12,7 +13,7 @@ class ExpressLoader {
     app.use('*', ExpressLoader.invalidRoute);
     app.use(ExpressLoader.errorHandler);
 
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log('App listening on port 3000');
     });
   }
