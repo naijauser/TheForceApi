@@ -1,4 +1,0 @@
-CREATE TABLE `theforceapi`.`comments` ( `id` INT NOT NULL AUTO_INCREMENT , `movie` INT NOT NULL , `comment` TEXT NOT NULL , `public_IP` VARCHAR(255) NOT NULL , `created_at` TIMESTAMP NOT NULL , PRIMARY KEY (`id`), INDEX `movie-index` (`movie`)) ENGINE = InnoDB
-
-
-http://localhost:3000/characters/?sort_by=height&sort_type=asc&page_number=5&gender=female
